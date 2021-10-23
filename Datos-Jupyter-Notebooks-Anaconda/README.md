@@ -342,25 +342,266 @@ wget -O anaconda https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_6
 
 
 
-
 ## Conda: crear y actualizar ambientes
 
+### Notas:
+
+```sh
+$ conda create --name [nombre] [paquete]=[versión]
+```
+
+Si no hay se especifíca una versión, se instalará la última disponible.
+
+Para ver los paquetes(si no se especifican los paquetes, dará una lista de los ambientes virtuales):
+
+```sh
+$ conda list [paquete]
+```
+
+Para activar y desactivar los ambientes:
+`$ conda activate [nombre del ambiente]` y `$ conda deactivate`
+Para actualizar paquetes:
+
+```sh
+$ conda update [paquete]
+```
+
+Para instalar un paquete específico:
+
+```sh
+$ conda install [paquete]=[versión]
+```
+
+Para clonar un ambiente:
+
+```sh
+$ conda --name [nuevo ambiente] --copy --clone [ambiente]
+```
+
+[Link Conda Cheat sheet commands](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
+
+![Selection_999(142).png](https://static.platzi.com/media/user_upload/Selection_999%28142%29-561c87dc-2e18-41e9-a2f6-f658fc1b3df0.jpg)
+![Selection_999(143).png](https://static.platzi.com/media/user_upload/Selection_999%28143%29-bf1d2155-2d4e-4866-8056-c5c36aa9ed69.jpg)
+![Selection_999(144).png](https://static.platzi.com/media/user_upload/Selection_999%28144%29-a5b9a417-b585-4750-bcc4-14f1c94a5bc5.jpg)
+![Selection_999(145).png](https://static.platzi.com/media/user_upload/Selection_999%28145%29-adcd4d86-751c-45d1-a09c-50eb266be8ee.jpg)
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ## Conda: abrir VSCode Notebooks con tu ambiente creado
 
+Hola de nuevo, yo sé que en la clase anterior te comenté que aprenderíamos a eliminar ambientes, pero antes hay algo muy importante que debes de aprender: **abrir tus notebooks desde VSCode con cualquier ambiente que hayas creado**.
+
+Esto es muy sencillo y solo tiene una pequeña diferencia con la forma en la que abriste tu notebook en la clase de instalación de Conda. Sigue los pasos que te muestro a continuación para hacerlo.
+
+1. Abre Visual Studio Code desde tu terminal con el comando:
+
+```bash
+code .
+```
+
+**Recuerda que si usas WSL debes verificar en el cuadro verde de la parte inferior izquierda que efectivamente usas VSCode desde WSL**.
+
+1. Abre la notebook vacía que creaste anteriormente o crea una nueva llamada `Untitled.ipynb`.
+
+![Notebook_abierta.png](https://static.platzi.com/media/user_upload/notebook_abierta-6ce05791-8423-4620-aff0-b2f7b7988f41.jpg)
+
+1. Asegura que tienes instalada la extensión de Python en VSCode que instalamos en una clase anterior.
+
+**En caso de que uses WSL debe estar instalada en la versión de VSCode con WSL**.
+
+![Extension_python.png](https://static.platzi.com/media/user_upload/extension_python-f7f76264-b121-4ca2-9588-2a431c815560.jpg)
+
+1. Regresa al notebook. En su esquina superior derecha aparecerá un botón que dice `Select Kernel`, `Not Started` o incluso puede aparecer en el botón que ya tienes un Kernel seleccionado. Da clic en él.
+
+![Select_kernel.png](https://static.platzi.com/media/user_upload/select_kernel-134cc7c4-965e-4290-b586-f01fac5a9719.jpg)
+
+1. Al presionarlo aparecerán todas las opciones de Kernels/ambientes que están instalados en tu computadora. Elige el que prefieras. Para este ejemplo escogeré el ambiente `py39` que creamos en la clase anterior.
+
+![Elegir_ambiente_py39.png](https://static.platzi.com/media/user_upload/elegir_ambiente_py39-129561ab-d095-409a-b059-599e9e11198b.jpg)
+
+Al elegirlo notarás que aparece el nombre del ambiente en el botón que presionaste anteriormente en la parte superior derecha.
+
+![Ambiente_seleccionado.png](https://static.platzi.com/media/user_upload/ambiente_seleccionado-ddad0cf6-0a1b-4ec4-8e77-5322c2a39f61.jpg)
+
+Listo, has seleccionado un ambiente. De esta forma puedes cambiar de ambiente cuando lo necesites y abrir tus notebooks para trabajar con ellas en VSCode.
+
+## ¿Qué hacer si no me aparecen los ambientes creados con Conda?
+
+1. Asegura tener instalada la extensión de Python. ¿Lo recuerdas? Porque con ello se instala todo lo necesario para que puedas escoger estos ambientes y usar Jupyter Notebooks.
+2. Si el problema todavía persiste recarga tu ventana de VSCode usando el comando `Ctrl + R` o `Command + R`.
+
+**Si estás en WSL elige la versión de VSCode de WSL. Debe decir la versión de Linux que instalaste**.
+
+![Reiniciar_vscode.png](https://static.platzi.com/media/user_upload/reiniciar_vscode-012271ad-415b-402f-9790-0fb52573e4da.jpg)
+
+------
+
+Ahora ya sabes cómo utilizar cualquier ambiente creado en Conda para usar tus Jupyter Notebooks. Entonces, avancemos a la siguiente clase para aprender a eliminar ambientes y librerías.
 
 ## Conda: eliminar ambientes y librerías
 
+Para desinstalar un paquete:
+
+```sh
+$ conda remove [paquete]
+```
+
+Para eliminar un ambiente (el ambiente debe estar desactivado):
+
+```sh
+$ conda env remove --name [nombre de un ambiente]
+```
+
+- Eliminar libreria: 
+
+  ```sh
+  conda remove pandas
+  ```
+
+  Eliminar ambiente: 
+
+  ```sh
+  conda env remove --name my_proyecto_chido
+  ```
+
+   **Nota:** el ambiente debe estar desactivado.
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ## Conda: comandos avanzados
 
+**Comandos avanzados:**
+
+Crear ambiente virtual
+
+```sh
+ conda create --name [nombre_paquete] [paquetes]
+```
+
+Instalar paquete que no esta disponible en el canal principal de conda:
+
+```sh
+ conda install -c [nombre_canal] [nombre_paquete] 
+```
+
+Enlistar las revisiones del estado del ambiente virtual:
+
+```sh
+ conda list --revision
+```
+
+Volver al estado de una revisión anterior:
+
+```sh
+ conda install --revision [nombre_revision]
+```
+
+Crear una descripción del ambiente con todas sus dependencia para compartir:
+
+```sh
+ conda env export  --no-builds
+```
+
+Crear una descripción del ambiente solo con los paquetes agregados manualmente (tiene la ventaja que permite mayor compatibilidad multiplataforma, daod que conda se encarga de instalar las dependencias especificas para los paquetes en el SO):
+
+```sh
+conda env export --from-history
+```
+
+Crear un archivo con la descripción(suele ser común en este tipo de archivos el formato .yml):
+
+```sh
+conda env export --from-history --file nombre_archivo.yml
+```
+
+Instalar ambiente virtual desde archivo:
+
+```sh
+conda env create --file nombre_archivo.yml
+```
+
+A jugar
+
+```Bash
+#Crear ambiente
+conda create --name py39 python=3.9 pandas=1.2
+#Ir al ambiente
+conda activate py39
+# Instalar boltons
+conda install -c conda-forge boltons
+#Devolver a un punto anterio y asi no tener que remover
+conda list -r
+#Devolverme a larevision 0
+conda install --revision 0
+#Revisar si esta instalado
+conda list boltons
+#Exportar tu ambiente
+conda env export
+#Exportar tu ambiente pero sin las versiones
+conda env export --no-builds
+#Exportar tu ambiente LA MEJOR
+conda env export --from-history
+#Exportar tu ambiente a un archivo
+conda env export --from-history --file environment.yam
+#Remover ambiente 
+conda env remove --name py39
+#Importar el ambiente
+conda env create --file environment.yaml
+#Ir al ambiente 
+conda activate py39
+```
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf)
 
 ## Acelerar la creación de ambientes virtuales con Mamba
 
+**MAMBA** se crearan los ambientes
+
+```Bash
+#Instalar MANBA
+conda install --channel conda-forge mamba
+mamba help 
+mamba --help
+#Desinstalar ambiente
+conda env remove --name py39
+#Con MANBA
+mamba env create --file environment.yaml
+#Activar ambiente
+conda activate py39
+```
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)Welcome to Mamba’s documentation! — documentation](https://mamba.readthedocs.io/en/latest/)
+
+[Página oficial de mamba](https://mamba.readthedocs.io/en/latest/)
 
 ## Bonus: divide y vencerás
 
+- En proyectos grandes, es complicado mantener un ambiente virtual. 😵
+- Divide y vencerás es partir un problema difícil en partes pequeñas. Cada paquete se desarrolla a su propio ritmo (no siempre preocupándose de la compatibilidad con otros módulos). 🤯
+- Hay tres tipos de paquetes: Externos, Modelo y de Comunicación. Entonces podemos crear en multiples ambientes en un solo proyecto. 👀 Para esto, creamos una carpeta llamada `envs` y creamos tres documentos: external.yml, model.yml y comunicacion.yml.
+- `Snakemake` es un paquete que implementa muy bien este concepto. Es un motor de workflows 👀. Cada paso lo ejecuta con un ambiente específico.
+
+Puedes crear varios ambientes virtuales por proyecto:
+
+- proyecto_1
+  - data
+  - models
+  - notebook
+  - envs
+    - external.yml
+    - model.yml
+    - comunication.yml
+
+[Documentación oficial de Snakemake](https://snakemake.readthedocs.io/en/stable/)
+
+[Snakemake - Snakemake 6.8.0 documentation](https://snakemake.readthedocs.io/en/stable/)
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)Snakemake — Snakemake 6.7.0 documentation](https://snakemake.readthedocs.io/en/stable/)
+
+[![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)Distribution and Reproducibility — Snakemake 6.7.0 documentation](https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#integrated-package-management)
+
 # 4. ¿Qué sigue con estas herramientas?
 
-
 ## Cómo seguir tu camino en ciencia de datos
+
+Nunca pares de Apr
