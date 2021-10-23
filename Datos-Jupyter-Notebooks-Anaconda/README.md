@@ -34,7 +34,7 @@
 
 Existen muchas plataformas para trabajar en Data Science, se recomiendo usar algún Sistema Operativo basado en UNIX usando Linux, MacOS o WSL en Windows, en editores estan VSCode, PyCharm, Deepnote, Google Colab, y el que usaremos Jupyter, todo basado en Notebooks que te permiten ir ejecutando trozos de código, en el cual puedes escribir pocas lineas de código probarlas, asegurarse de que estén bien y seguir adelante con otro trozo, allí también se pueden añadir código, ecuaciones, gráficas, texto enriquecido, etc.
 
-[DataScience.pdf](https://drive.google.com/file/d/1X4pLS115QHX9svkk9_Y6YQPjlvbMfz4I/view?usp=sharing)
+[DataScience.pdf](https://drive.google.com/file/d/1X4pLS115QHX9svkk9_Y6YQPjlvbMfz4I/view?usp=sharing//)
 
 #### Notebooks Vs Scripts
 
@@ -134,26 +134,213 @@ Lo pueden encontrar dando clic en su perfil (esquina superior derecha), seleccio
 
 ## Instalar VSCode
 
-
+- Editores de código: Enfocados a multiples lenguajes. Se pueden potencial con extensiones o plugins. Por lo general son gratuitos. Mejor este 😄. Tenemos Pycharm VSCode, Atom, etc.
+- IDE (entornos de desarrollo integrado): Enfocado a un solo lenguaje y seguimiento a un solo proyecto. Por lo general son de pago 💸
 
 [Temas a su editor](https://vscodethemes.com/)
 
+[![img](https://www.google.com/s2/favicons?domain=https://code.visualstudio.com/download/favicon.ico)Download Visual Studio Code - Mac, Linux, Windows](https://code.visualstudio.com/download)
 
 ## Instalar WSL: usa Linux dentro de Windows
 
+Hola, estamos a punto de instalar **WSL (Windows Subsystem for Linux)**, una de las herramientas más poderosas que, como científica o científico de datos, usarás en tu día a día si utilizas Windows 10 o posterior.
+
+Si utilizas Linux de forma nativa o macOS como tu sistema operativo puedes saltarte esta clase. Pero si utilizas Windows 10 es momento de que sigas cada uno de los siguientes puntos.
+
+## 1. Instalar WSL y Ubuntu 20.04
+
+**WSL** es la base con la que haremos que alguna distribución de Linux pueda correr dentro de nuestra computadora con Windows 10.
+
+Una vez que se tenga instalada esta herramienta podrás instalar una gran variedad de distribuciones de Linux como Ubuntu o Debian. Para nuestro caso instalaremos **Ubuntu 20.04**, pero puedes escoger alguna otra por la que tengas preferencia y ya sepas utilizar.
+
+Para instalar estas dos herramientas toma las siguientes 3 clases del **Curso de Prework: Configuración de Entorno de Desarrollo en Windows**:
+
+1. [¿Qué es Windows Subsystem for Linux?](https://platzi.com/clases/2042-prework-windows/32465-que-es-windows-subsystem-for-linux/)
+2. [Instalación de Windows Subsystem for Linux](https://platzi.com/clases/2042-prework-windows/32489-instalacion-de-windows-subsystem-for-linux/)
+3. [Configuración de Ubuntu en WSL](https://platzi.com/clases/2042-prework-windows/32934-configuracion-de-ubuntu-en-wsl/)
+
+Sigue paso a paso las instrucciones de estas clases para que tengas con éxito la instalación de WSL y Ubuntu en tu computadora.
+
+De igual forma te comparto la [documentación oficial de Microsoft](https://docs.microsoft.com/es-mx/windows/wsl/install-win10) de este proceso y te invito a que dejes en los comentarios cualquier duda o inconveniente con el que te hayas topado al instalarlas para que podamos apoyarte.
+
+## 2. Probar versión de Python 3
+
+Al instalar Ubuntu tendremos una instalación de Python 3 disponible para utilizar. Probemos esta instalación:
+
+1. Abre Windows Terminal y dentro de las opciones escoge Ubuntu 20.04 que acabas de instalar.
+   ![Seleccionar_ubuntu.png](https://static.platzi.com/media/user_upload/seleccionar_ubuntu-f906bb64-b3b9-40ea-877e-df3a8dbd4e18.jpg)
+2. Dentro de la terminal con Ubuntu 20.04 escribe el siguiente comando:
+
+```bash
+python3 --version
+```
+
+![Python_version.png](https://static.platzi.com/media/user_upload/python_version-08b8ac15-c6a6-4f7a-a950-8765df191257.jpg)
+Como puedes observar en la imagen, esto te imprimirá en pantalla que cuentas con una versión de Python 3 lista para su uso.
+
+## 3. Instalar pip3
+
+Ahora es momento de instalar pip3, el manejador de paquetes y librerías más utilizado de Python. Con esta herramienta podrás instalar librerías de terceros como Pandas o Numpy que usarás en tu día a día en ciencia de datos.
+
+1. Escribe en tu terminal el siguiente comando para instalar pip3:
+
+```bash
+sudo apt-get -y install python3-pip
+```
+
+![install_pip3.png](https://static.platzi.com/media/user_upload/install_pip3-1af35218-ea77-477e-93d1-8e357722c37f.jpg)
+
+1. Prueba la instalación de pip3 una vez que haya terminado todo el proceso con el comando:
+
+```bash
+pip3 --version
+```
+
+![probar_pip.png](https://static.platzi.com/media/user_upload/probar_pip-4faeca1b-8a87-4928-9a3f-1e6975817cdd.jpg)
+
+Muy bien, con esto ya tienes instalado pip3 en tu terminal con Ubuntu 20.04.
+
+## 4. Abrir VSCode desde WSL
+
+Ahora que tienes tu sistema de Linux en Windows, Visual Studio Code lo abrirás de una forma un tanto distinta para que toda librería o configuración que instales en ese sistema funcione.
+
+1. Busca VSCode desde tu buscador de Windows y ábrelo dando clic en su ícono:
+   ![buscar_vscode.png](https://static.platzi.com/media/user_upload/buscar_vscode-106bb0e3-291f-49b9-b7d1-353277404fac.jpg)
+2. Una vez abierto VSCode ve al panel izquierdo y da clic en el ícono de extensiones:
+
+![extensiones.png](https://static.platzi.com/media/user_upload/extensiones-07c59cae-12a6-49e0-b4d7-b18b96ab41ae.jpg)
+
+1. Busca en el menú izquierdo la extensión **[Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)** e instálala con el botón azul install:
+   ![instalar_RemoteWSL.png](https://static.platzi.com/media/user_upload/instalar_RemoteWSL-451a06b1-8b0e-431e-9c39-5ddaee5dd565.jpg)
+2. Escribe el siguiente comando desde tu terminal para abrir VSCode en WSL:
+
+```bash
+code .
+```
+
+![VSCode_WSL.png](https://static.platzi.com/media/user_upload/VSCode_WSL-468a3ca0-c148-4f73-8177-e1e68479e947.jpg)
+
+Este comando abrirá una versión de VSCode que correrá desde WSL. Esto puedes comprobarlo porque en la parte inferior izquierda de tu editor verás un recuadro verde que indica que estás en WSL y qué versión de Linux utilizas:
+
+![WSL_version.png](https://static.platzi.com/media/user_upload/WSL_version-c7aae367-1402-4644-a3d4-55d893c505c1.jpg)
+
+Excelente, ya está usando VSCode desde WSL. Recuerda que siempre debes abrir VSCode con el comando `code` desde tu terminal con WSL, de lo contrario te encontrarías utilizando la versión del editor de tu Windows y no la de tu versión de Linux.
+
+------
+
+¡Listo, hemos terminado la instalación de todas las herramientas para utilizar Linux desde tu computadora con Windows! Sé que ha sido un largo camino, pero créeme que ya tienes todas las bases para instalar cualquier herramienta adicional que deba utilizarse desde Linux en ciencia de datos.
+
+Recuerda que si tuviste cualquier inconveniente o duda en el proceso de instalación puedes dejarla en los comentarios para que toda la comunidad de Platzi podamos apoyarte. 😄
+
+Sin más, te veo en la siguiente clase. Profundizaremos en la instalación de extensiones para VSCode.
 
 ## Agregar extensiones para VSCode
 
+**Agregar extensiones para VSCode.**
+
+- Hay muchas extensiones para VSCode que hacen trabajar con datos más cómodo. ☁️
+- Se pueden instalar todas las extensiones directamente desde VSCode 😄.
+- Es recomendable activar la sincronización automática en la nube, para que siempre puedas tener tu entorno de trabajo en cualquier lugar. Lo puedes contectar con tu cuenta de GitHub 🤖
+- Hay extension para Python que incluye muchas funcionalidades 🔥.
+- MagicPython sirve mucho para darle formato a Python y que sea más legible.
+- Las extensiones de Icon sirven para diferenciar tipos de archivos. 📁
+- Rainbow Brackets sirve para cambiar los colores de los paréntesis y no tener errores 🌈.
+- Remote Development te descarga múltiples extensiones que te sirven trabajar de manera remota. 🌎.
+
+**Extensiones que yo utilizo:**
+
+- Pythom y Jupyter
+- Kite (para autocompletado)
+- GitLens (para git)
+- Indented Block Highlighting
+- VScode Icons
+- Rainbow CSV
+- Remote Development
 
 ## Uso de VSCode notebooks
 
-# 3. Entorno de desarrollo con Anaconda
+Python como:
 
+- Python: Extencion de python.
+- MagicPython: Colores para la identación de python
+- MaterialIconTheme: Iconos para todos los archivos y documentos manejados
+- Rainbow Brackets: Colores para la identificación de los parentesis o corchetes, inicio y cierre
+- Remote Development: Conección remota
+
+[![img](https://www.google.com/s2/favicons?domain=https://code.visualstudio.com/docs/datascience/jupyter-notebooks/favicon.ico)Working with Jupyter Notebooks in Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
+# 3. Entorno de desarrollo con Anaconda
 
 ## ¿Qué son los ambientes virtuales?
 
+![img](https://i0.wp.com/dataaspirant.com/wp-content/uploads/2020/11/5-Anaconda-Vs-Python-virtual-env-comparison.png?w=750&ssl=1)
+
+En local solo había trabajado scripts .py, para los cuales creaba ambientes virtuales con el comando venv.
+
+A raíz del curso me surgió la duda de cuál era la diferencia o cuando usar conda o venv, encontré está infografía.
+
+**¿Qué son los ambientes virtuales?**
+
+- En la vida real, no vas a trabajar en un solo trabajo, si no en varios, y cada uno tendrá diferentes dependencias y requerimientos 🤔.
+- Cuando se actualizan o se cambia la configuración de las dependencias de un ambiente que tiene varios proyectos asociados puede haber errores 🛑.
+- Para poder separar proyectos, lo que hacemos es crear ambientes virtuales diferentes para cada proyecto. 🧠 Entonces la configuración y actualizaciones son para cada proyecto.
+- **Ambiente virtual**: Proyecto que puede tener sus propias dependencias, independientemente de las dependencias que tengan los demás proyectos (Scott Robinson y la gente de Real Python).
+
+En python existen herramientas como:
+
+- .venv
+- Pipenv
+- conda
+
+> **Ambiente Virtual**: *Proyecto que puede tener sus propias dependencias, independiente de las dependencias que tengan los demás proyectos*
+
+[![img](https://www.google.com/s2/favicons?domain=https://www.anaconda.com/blog/understanding-conda-and-pip/assets/build/favicons/apple-touch-icon-5bbdb087c5.png)Anaconda | Understanding Conda and Pip](https://www.anaconda.com/blog/understanding-conda-and-pip)
 
 ## Instalar Conda a través de la terminal
+
+Descargar `anaconda`
+
+```sh
+wget -O anaconda https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+```
+
+**Instalar Conda a través de la terminal.**
+
+- Conda: Programa diseñado para gestión de paquetes, dependencias y entorno para cualquier lenguaje: Python, R, Ruby, Lua, Scala, Java, JavaScript, etc. Además, es multiplataforma. 🖥️
+
+- Para instalar conda debes instalar anaconda (versión completa, metapaquete de ciencia de datos) o miniconda (versión mínima). 🐍
+
+- Para instalar conda:
+
+  [Anaconda | Individual Edition](https://www.anaconda.com/products/individual)
+
+  O bien hacer 
+
+  ```sh
+  wget -0 anaconda.sh https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+  ```
+
+  Para instalar hacemos `bash anaconda.sh`. 🐍
+
+- Para abrir notebooks usamos `jupyter-notebook`o bien `jupyterlab`. Los notebooks que creas ahí también los puedes abrir en VSCode.
+
+- Para abrir VSCode en la carpeta en el que te encuentras, usas 
+
+  ```bash
+  code .
+  ```
+
+  >  **Anaconda**: *Gestión de paquetes, dependencias y entornos para cualquier lenguaje: Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN y más*.
+
+[![img](https://www.google.com/s2/favicons?domain=https://www.anaconda.com/products/individual/assets/build/favicons/apple-touch-icon-5bbdb087c5.png)Anaconda | Individual Edition](https://www.anaconda.com/products/individual)
+
+[![img](https://www.google.com/s2/favicons?domain=https://docs.conda.io/projects/conda/en/latest/commands.html#conda-vs-pip-vs-virtualenv-commands_static/conda-logo.png)Command reference — conda 4.10.3.post29+a34aeac02 documentation](https://docs.conda.io/projects/conda/en/latest/commands.html#conda-vs-pip-vs-virtualenv-commands)
+
+[![img](https://www.google.com/s2/favicons?domain=https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html../../_static/conda-logo.png)Installing on Linux — conda 4.10.3.post29+a34aeac02 documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+
+[![img](https://www.google.com/s2/favicons?domain=https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html../../_static/conda-logo.png)Installation — conda 4.10.3.post29+a34aeac02 documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
+
+
 
 
 ## Conda: crear y actualizar ambientes
