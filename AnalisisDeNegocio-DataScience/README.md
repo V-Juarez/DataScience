@@ -371,34 +371,232 @@ Por ley o por la falta de, es que la tecnología avanza a un ritmo tan diferente
 
 # 3. Problema de negocio: análisis
 
-
 ## Aplica técnicas de storytelling para convertir problemas de datos en historias
 
+**PROBLEMA**
+
+- *Algunos alumnos de Platzi no dan comentarios de valor en el sistema de comentarios de las clases.*
+- *No se puede prevenir este comportamiento.*
+
+**SOLUCIÓN**
+
+- *Script que clasifique e identifique los comentarios que sean aportes de valor para la clase.*
+- *Entender la estructura de los comentarios clasificados como comentarios sin valor*.
+- *Los comentarios que sean clasificados como comentarios sin valor no deberían generar puntuación.*
+- *Exhortar a los alumnos a utilizar canales de comunicación adecuados para cada tipo de comentario.*
+- *Dar a los alumnos con mejores aportes de valor un reconocimiento(ejemplo una insignia).*
+
+**ALCANCE**
+
+- *Sistema de comentarios de las clases de Platzi.*
+
+  > */--**Problema**: Ali express tiene un gran numero de productos distribuidos por distintos paises en el mundo, al no controlar el envio de sus productos, muchos terminan extraviados, llegan meses despues o son cancelados por la demora, esta situación le cuesta dinero porque cuando un pedido se retrasa o se demora demasiado Ali express reintegra la compra al cliente, sin contar que afecta su reputación y hace que muchas personas no esten dispuestas a comprar en su sitio.
+  >
+  > **Solución**: Identificar cuales son los paises en los que mas suceden estos inconvenientes y debido a que razones, analizar que tan alto es el numero de clientes que sufren esta situación y cual es el costo promedio de estos reembolsos, tambien se podria analizar que cuantos de estos clientes no volvieron a comprar en el sitio despues de esta problematica. Podria ser que si los datos nos lo indicaran, seria mas redituable para ellos controlar los envios o crear sucursales de recepcion y entrega de paquetes en los paises o ciudades donde la demanda y la problematica sean elevados. O podrias considerar llegar a acuerdos con los servicios de paqueterias de algunas ciudades para mejorar el servicio de envio.
+  >
+  > **Alcance**: Paises a los cuales se puede enviar mercancia de Ali Express, con distincion por ciudad. Clasificacion de problematica(reembolsos por retrasos, por extravio de la mercacia, clientes que no volvieron a comprar). Clientes. Costo promedio mensual de reembolsos, costo de perdida de clientes. Se puede realizar para rastrear que tan grave es la problematica pero se podria automatizar para mejorar constantemente y rastrear el progreso.
 
 ## Cómo estructurar un caso de negocio
 
+Desglosar un problema de negocio en una hipótesis estructurada:
+
+- **¿Qué?** > Problema de negocio -> Hipótesis: Partir de una pregunta específica.
+
+- **¿Por qué?** > Clasificar todos los motivos y sistematizarlo en pocas categorías, ejemplo:
+
+  - Motivaciones económicas
+
+  - Preguntas
+
+  - Problemas tecnológicos (relacionado con problema de como comunica la empresa).
+
+  - Política de la empresa.
+
+- **¿Cómo?** > Estrategia de cómo vamos a diseñar y organizar todo el análisis:
+
+1. **Análisis cuantitativo**. Debe ir siempre primero ya que es toda la información. Hacer una clasificación numérica.
+
+2. **Análisis cualitativo**. Buscar categorías en función de texto. Nos ayuda a identificar características, tipos, relacionados con el problema.
+
+3. **Matriz cuantitativa-cualitativa**. Poner en conjunto la información, entender los números y explicarlos más a profundidad.
+
+4. **Acciones de prevención**. Definir acciones con la información que tenemos. **Pasar de los insights a acciones**.
+
+5. **Validación**. Verificar si nuestro análisis ha servido y si nuestras acciones de prevención están teniendo efecto.
 
 ## Análisis cuantitativo en un caso de negocio
 
+1. ### **¿Quienes pueden ser los top offenders?**
+
+Para identificarlos debemos descargar la información de la manera más genérica posible y después se clasifican. Para que sea genérico tenemos que encontrar cualquier cliente que por lo menos haya hecho una queja en un mes, al equipo de soporte. Hacer macros o variables adaptables por ciudad y por mes. Esto servirá para replicarlo.
+
+### 2.  Identificación
+
+Para identificar quiénes son debemos encontrar **patrones de comportamiento y variables significativas** estos van a ser las variables que nos ayuden a definir si alguien es ofender top offender.
+
+**Hipótesis de variables**
+
+- **Madurez**. Experiencia del usuario utilizando la plataforma, lo evaluamos al verificar el número de comprar realizadas.
+
+- **Quejas mensuales**. Número de quejas que hizo un cliente o usuario.
+
+- **Compras Mensuales**. Evaluar el numero de compras y el número de quejas correspondientes a esas compras. Encontrar una relación de comportamiento.
+
+- **Gasto mensual.** Tomar en cuenta el tipo de producto y su complejidad, lo cuál va relacionado muchas veces con el precio del mismo.
+
+- **Créditos y dinero devuelto**. Identificar si es una persona que busca una compensación económica.
+
+- Margen operativo neto
+
+  . Es el
+
+   
+
+  Rendimiento
+
+  . Que te queda como empresa a partir del comportamiento del usuario o cliente.
+
+  - (Lo que vendí x precio de lo que vendí)- recursos de soporte post venta - Dinero devuelto == Cuanto nos queda a la empresa.
+
+### 3. Fase de Definición
+
+> **Objetivo** = encontrar una segmentación con base en la rentabilidad.
+
+Si un usuario es más rentable(compra más), le permito que se queje más.
+
+> **Threshold**(límite). Definir el límite entre una persona que sus quejas sean normales y otra que excede las quejas normales. Definir un Threshold para cada categoría.
 
 ## Análisis cualitativo en un caso de negocio
 
+**Clusterizar**: Agrupar las problemáticas, motivaciones y contactos por parte de los clientes a las que nos enfrentamos. Este ejemplo se clasificaron en 4 categorías las más de 500 tipos contactos:
+
+- **Motivación económica**. Buscan que se les devuelva el dinero. Ésta es la más grave ya que además de ser una queja, se les devuelve el dinero.
+- **Preguntas**. Los clientes tienen dudas.
+- **Problemas tecnológicos**. Relevante para identificar fallas técnicas del servicio o producto.
+- Política de empresa
+
+### Clasificación
+
+Definir los motivos detrás de los mensajes, cuando los hayamos clasificado dentro de una categoría profundizaremos en los motivos de contacto de una manera geolocalizada por lo que tendremos especificidad en cada contexto social.
+
+![Captura de Pantalla 2020-11-22 a la(s) 17.44.26.png](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-11-22%20a%20la%28s%29%2017.44.26-8965fbbf-0e1d-4b47-aeb5-564380df4c42.jpg)
+
+> Los datos cuantitativos nos dicen qué clientes se quejaron y cuantas veces
+> Los datos cualitativos nos explican el motivo de su queja (devolución de dinero, problemas técnicos, dudas, etc)
+
+**CLUSTERIZAR**
+
+- Causas -> Categorias -> Porcentualizar grupos de datos
+
+**CLASIFICAR**
+
+- Definir segmentos de datos
+
+**PROFUNDIZAR**
+
+- Especificar lo maximo posible comprendiendo el entorno donde recurrentemente surgen los problemas 
 
 ## Fusión cuanti-cualitativa en un caso de negocio
 
+Resolver de manera conjunta la información cuantitativa y cualitativa para sacar conclusiones.
+
+Una vez que tenemos información sobre cuáles son las razones por las que los clientes nos contactan así como una clasificación de los top offenders vamos a ver por qué se queja cada uno de los tipos de top offenders para encontrar las claves del análisis.
+
+Para este análisis se utiliza una tabla con un mapa de calor para resaltar los porcentajes más elevados y poder concentrar nuestra atención en los problemas mayores más rapidamente.
+
+![Captura de Pantalla 2020-11-22 a la(s) 18.01.01.png](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-11-22%20a%20la%28s%29%2018.01.01-2e7b220d-082a-4d1f-a723-6e5d0ea9b094.jpg)
+
+> “Lo que no se mide, no existe”.
+
+Por eso es súper importante poder visualizar la data que procesamos y qué mejor que con una gráfica de calor (*heat map*) para observar comportamientos como ha mencionado Silvia, esto nos permitirá tomar decisiones de una mejor forma.
+
+> Para unir los datos cuantitativos y cualitativos en mi caso de negocio debo identificar:
+>
+> - La cantidad de ventas pérdidas presentadas (una venta no efectuada) por categoría de producto y producto en específico.
+> - La cantidad de productos en stock por categoría de producto y por producto en específico.
+> - La cantidad de productos en la estantería por categoría de producto y producto en específico.
+> - Cada cuánto se debe hacer un pedido para evitar las ventas pérdidas por mes (enero, febrero, etc) y día de la semana (lunes, martes, etc).
+> - La cantidad de producto a reabastecer por categoría de producto y producto en específico.
 
 ## ¿Qué es minería de texto? ¿Cómo usarla para obtener información adicional?
 
+La **minería de textos** es una rama específica de la [minería de datos](https://es.wikipedia.org/wiki/Minería_de_datos) que se refiere al proceso de analizar y derivar información nueva de textos. Por medio de la identificación de patrones o correlaciones entre los términos se logra encontrar información que no está explícita dentro del texto. Los textos que se usan como recursos pueden ser páginas web, libros, correos electrónicos, reseñas de clientes, artículos, entre otros.
+
+La minería de textos es un área multidisciplinaria basada en la recuperación de información, [aprendizaje automático](https://es.wikipedia.org/wiki/Aprendizaje_automático), [estadísticas](https://es.wikipedia.org/wiki/Estadística) y la [lingüística computacional](https://es.wikipedia.org/wiki/Lingüística_computacional). Como la mayor parte de la información (más de un 80%) se encuentra actualmente almacenada como texto, se cree que la minería de textos tiene un gran valor comercial.
+
+Por ejemplo: Twitter, tiene su base de negocio en la exploración de los mensajes.
+
+Un ejemplo de análisis cualitativo, minería de textos, uso de machine learning y crowdsourcing es la plataforma ESTADO DE ÁNIMO DE LOS TWITTEROS EN MÉXICO 🇲🇽 les recomiendo checarla es muy interesante, puedes ver el estado de ánimo en determinadas zonas y fechas: [INEGI twettir](https://www.inegi.org.mx/app/animotuitero/#/app/multiline)
+
+![Investigación_-_Estado_de_ánimo_de_los_tuiteros.jpg](https://static.platzi.com/media/user_upload/Investigacio%CC%81n_-_Estado_de_a%CC%81nimo_de_los_tuiteros-32413b5f-d2ad-4359-b8cb-d425a4b3d1d3.jpg)
+
+La minería de texto se define como el proceso de descubrimiento de patrones
+interesantes y nuevos conocimientos en una colección de textos, es decir, es el proceso encargado del descubrimiento de conocimientos que no existían explícitamente en ningún texto de la colección, pero que surgen de relacionar el contenido de varios de ellos.
+
+![mineria texto.png](https://static.platzi.com/media/user_upload/mineria%20texto-bac2157a-3226-468b-830c-a8dcf1c25979.jpg)
+
+Mediante la minería de texto podemos crear nubes de palabras por categoría qu enos permitiría dar luces sobre cada una de estas.
+
+![img](https://www.pragma.com.co/hs-fs/hubfs/Nube%20de%20palabras%20.png?width=788&name=Nube%20de%20palabras%20.png)
+
+[![img](https://www.google.com/s2/favicons?domain=//static.platzi.com/media/favicons/platzi_favicon.png)¿Minar datos y pensamientos?](https://platzi.com/blog/minar-datos-y-pensamientos/)
 
 ## Variación de comportamientos a partir de la geolocalización
 
-# 4. Problema de negocio: implementación
+### Variación de comportamiento a partir de la geolocalización
 
+Relevancia del comportamiento de acuerdo al origen geográfico por país, ciudad, distrito.
+
+En el caso de top offenders se creó un gráfico que compara las quejas vs compras de acuerdo al origen geográfico de las mismas, a nivel de ciudad. Se espera obtener una línea de 45º si el comportamiento de los resultados es normal como se observa en el gráfico.
+
+![Captura de Pantalla 2020-11-22 a la(s) 18.32.59.png](https://static.platzi.com/media/user_upload/Captura%20de%20Pantalla%202020-11-22%20a%20la%28s%29%2018.32.59-e8c528b9-2fae-433c-b88a-ae6699ddc726.jpg)
+
+Aquellas ciudades que se alejen de la línea son aquellas que tienen más top offenders de lo normal. Las ciudades con más top offenders son Puebla, Querétaro, Toluca; esto se define al observar que las ciudades se encuentran más alejadas del eje normal y más cercanas al eje de las quejas.
+
+Con Tableau se pueden lograr ese tipo de gráficas categorizando la información y quedan geniales.
+
+![img](https://help.tableau.com/current/pro/desktop/es-es/Img/actions_parameters_reflineupdate.gif)
+
+> En geolocalización sería también importante pensar en la distribución de tipo de clientes por ciudad. Es decir, uno puede tener una ciudad cercana al eje x ("con muchos top offenders) pero es posible que la distribución de clientes en esta ciudad esté sesgada hacia clientes plata u oro. Es importante validar esto para no llegar a una conclusión errónea.
+
+# 4. Problema de negocio: implementación
 
 ## Acciones, algoritmos y toma de decisiones según los resultados del análisis
 
+**ALGORITMOS USADOS:**
+
+a)Minería de texto: es el analisis de las palabras
+
+b)Encontrar correlaciones y patrones de comportamiento: por ejemplo aprender si los usuarios que mas compran son los que mas se quejan, y porque lo hacen, etc.
+
+c)Arboles de decisiones: Nos ayudan a la toma de decisiones, partiendo de una hipótesis A o una hipótesis B y nos iremos acercando con teoría de juegos para predecir cual es la mejor estrategia.
+
+d)Validación con bayesianos: la estadística bayesiana es muy útil para identificar patrones que se comportan de maneja conjunta. Por ej. cual es la probabilidad que si yo aviso a un usuario de que es un top offender, reincida o lo entienda y deje de comportarse asi
+
+e)Cadenas de Montecarlo: Son probabilidades concatenadas, conjuntas. Por ej. si un mes fue top offender, el mes siguiente lo va a ser? Ya no lo sera?. Son estudios que se hacen después de nuestro análisis, son métodos de validación. Es ver como impacto el modelo.
+
+**ACCIONES:**
+
+a)Taggear, identificar a los top offenders: saber quienes son y taggearlos, para saber si ya reincidió una vez, si darle beneficios o no.
+
+b)Advertirlos.
+
+c)Llamar usuarios: en los mejores clientes, es mejor llamarlos y se obtiene un trato personalizado.
+
+d)Bloquear usuarios: es en casos extremos.
+
+e)Validación con A/B test: donde la A puede ser una llamada, y la B puede ser mandarles un mensaje y ver el comportamiento de cada uno para ver cual funciono mejor.
+
+> Los algoritmos se verán a mayor profundidad en la ruta y tendrás mayor capacidad para entenderlos y aplicarlos a grandes cantidades de datos.
+
+Sobre las acciones, pueden variar muchísimo conforme al problema a solucionar y siempre debemos pensar en las consecuencias.
 
 ## Apuntes y cursos para aprender ciencia de datos
 
+![MajoDataBusiness.png](https://static.platzi.com/media/user_upload/MajoDataBusiness-416e719d-4433-410d-8a62-d1766dcf9630.jpg)
 
-## Continúa aprendiendo ciencia y análisis de
+![img](https://miro.medium.com/max/4360/1*PzzcJA-cwXQ8hwlpM4DwbA@2x.jpeg)
+
+## Continúa aprendiendo ciencia y análisis de de datos para ejecutar estrategias efectivas
+
+No pares de Aprender!
